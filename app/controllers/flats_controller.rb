@@ -46,3 +46,13 @@ class FlatsController < ApplicationController
     params.require(:flat).permit!
   end
 end
+
+
+
+
+
+
+
+
+
+
