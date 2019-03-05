@@ -1,0 +1,7 @@
+<h1>Our homes</h1>
+
+<% @flats.each do |flat| %>
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=flat.picture%>)">
+   <h3><%= flat.name %></h3>
+  </div>
+  <% end %>
