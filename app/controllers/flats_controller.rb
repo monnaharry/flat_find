@@ -17,6 +17,7 @@ class FlatsController < ApplicationController
     else
       render :new
     end
+    raise
   end
 
   def update
@@ -26,6 +27,7 @@ class FlatsController < ApplicationController
   end
 
   private
+
   def flat_params
     params.require(:flat).permit!
   end
