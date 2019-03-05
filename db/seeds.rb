@@ -32,9 +32,9 @@ end
   flat = Flat.new
   flat.name = Faker::TvShows::Simpsons.location
   flat.address = Faker::Address.full_address
-  flat.description = Faker::Hipster.paragraphs([1, 2, 3].sample, true)
+  flat.description = Faker::Hipster.paragraphs([1, 2, 3].sample, true).join("\n")
   flat.price = (10..300).to_a.sample
-  flat.picture = "https://source.unsplash.com/collection/1134892/#{(1..15).to_a.sample}"
+  flat.picture = "https://source.unsplash.com/collection/1134892/#{(1..150).to_a.sample}"
   flat.user_id = User.all.sample.id
   flat.save
 end
