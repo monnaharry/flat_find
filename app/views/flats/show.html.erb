@@ -6,4 +6,8 @@
 <p><%= @flat.description %></p>
 <p><%=@flat.price%>€ per night</p>
 
+<p> <%= link_to "View all listings", flats_path %> </p>
 <p> <%= link_to "Back to listings", flats_path %> </p>
+<p> <%= link_to "Remove listing", flat_path(@flat),
+          method: :delete,
+          data: { confirm: "Are you sure you want to remove your #{@flat.name} listing?" }%></p>
