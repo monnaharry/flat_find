@@ -1,0 +1,12 @@
+<h1>This is your profile page</h1>
+<h3>
+  <%= @user.name %>
+</h3>
+<hr>
+<% @user.flats.each do |flat| %>
+  <p>
+    <%= flat.name %>
+    <%= flat.price %>
+  </p>
+<% end %>
+<%= link_to 'Back to index', flats_path %>
