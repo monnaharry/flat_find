@@ -10,7 +10,7 @@
   <%= f.input :kitchen %>
   <%= f.input :common_area %>
   <%= f.input :price %>
-  <%= f.input :picture %>
+  <%= f.file_field :pictures, multiple: true %>
   <%= f.input :picture_cache, as: :hidden %>
   <%= f.submit %>
 <% end %>

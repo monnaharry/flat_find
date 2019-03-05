@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_03_05_150236) do
-=======
-ActiveRecord::Schema.define(version: 2019_03_05_145716) do
->>>>>>> 0dfb28d408ec4c8d4f9290badce4433705777415
+ActiveRecord::Schema.define(version: 2019_03_05_160020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,13 +20,10 @@ ActiveRecord::Schema.define(version: 2019_03_05_145716) do
     t.string "address"
     t.string "description"
     t.integer "price"
-    t.string "picture"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.string "photo"
-=======
     t.integer "bathroom"
     t.integer "bed"
     t.boolean "kitchen"
@@ -38,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_145716) do
     t.string "room_type"
     t.integer "guest"
     t.string "property_type"
->>>>>>> 0dfb28d408ec4c8d4f9290badce4433705777415
+    t.string "pictures", default: [], array: true
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
