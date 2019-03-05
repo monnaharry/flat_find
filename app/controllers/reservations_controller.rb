@@ -2,6 +2,10 @@ class ReservationsController < ApplicationController
   def show
   end
 
+  def new
+    raise
+  end
+
   def destroy
   end
 
