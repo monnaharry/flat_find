@@ -17,7 +17,6 @@ class FlatsController < ApplicationController
     else
       render :new
     end
-    raise
   end
 
   def update
