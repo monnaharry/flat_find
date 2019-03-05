@@ -6,4 +6,5 @@ class Flat < ApplicationRecord
   validates :address, presence: true
   validates :description, presence: true
   validates :price, presence: true, numericality: true
+  mount_uploader :picture, PhotoUploader
 end
