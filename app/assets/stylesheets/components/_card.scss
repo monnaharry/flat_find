@@ -3,7 +3,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 20px;
-  width: 400px;
+  width: 450px;
   height: 300px;
 }
 
@@ -45,7 +45,7 @@
 .cards-index-container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
