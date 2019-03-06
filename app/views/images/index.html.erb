@@ -1,9 +1,13 @@
-<% @images.each do |image| %>
-<%= cl_image_tag image.url, height: 300, width: 400, crop: :fill %>
-<%= link_to 'delete', image_path(image),
-method: :delete,
-data: { confirm: "Are you sure?" } %>
-<% end %>
+<div class="show-image">
+  <div class="container">
+    <% @images.each do |image| %>
+    <%= cl_image_tag image.url, height: 300, width: 400, crop: :fill %>
+    <%= link_to 'Delete', image_path(image), class: "btn btn-primary-teal delete-photo",
+    method: :delete,
+    data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </div>
+</div>
 <hr>
 <div class="container">
   <div class="photo-headline">
