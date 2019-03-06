@@ -1,8 +1,6 @@
 <h1>Hi <%= @user.name %>, welcome to your profile page</h1>
-<%= cl_image_tag @user.profile_pic, width: 150, height: 150, crop: :thumb, gravity: :face%>
-
+<%= cl_image_tag @user.profile_pic, class: "avatar-large", width: 150, height: 150, crop: :thumb, gravity: :face%>
 <%= render 'form' %>
-
 <hr>
 <% @user.flats.each do |flat| %>
   <p>
