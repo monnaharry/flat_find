@@ -1,0 +1,38 @@
+.container0 {
+  margin: 0 20;
+  width: 970px;
+}
+
+.container h4 {
+  padding-top: 20px;
+  margin: 0 0;
+}
+
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0;
+}
+
+.container2 {
+  overflow: auto;
+  width: 970px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.bw {
+    -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+.bw:hover {
+    -webkit-filter: grayscale(100%);
+
+
+}
+
