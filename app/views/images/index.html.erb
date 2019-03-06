@@ -1,0 +1,10 @@
+<% @images.each do |image| %>
+<%= cl_image_tag image.url, height: 300, width: 400, crop: :fill %>
+<%= link_to 'delete', image_path(image),
+method: :delete,
+data: { confirm: "Are you sure?" } %>
+<% end %>
+
+<%= render 'form' %>
+
+<%= link_to 'Back to flat', flat_path(@flat) %>

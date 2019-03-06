@@ -1,7 +1,9 @@
 <h1>Our homes</h1>
 
 <% @flats.each do |flat| %>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=flat.picture%>)">
+  <% flat.images.each do |image| %>
+    <%= cl_image_tag image.url, height: 300, width: 400, crop: :fill %>
+  <% end %>
     <h3> <%= link_to flat.name, flat_path(flat) %></h3>
   </div>
   <% end %>

@@ -1,14 +1,21 @@
 <h1><%= @flat.name %></h1>
 <p>Hosted by <%=@user.name %></p>
- <!--  <img src="<%=@flat.picture%>" alt="main picture" class="main-picture"> -->
- <%=cl_image_tag @flat.picture, height: 300, width: 400, crop: :fill %>
+<% @flat.images.each do |image| %>
+<%= cl_image_tag image.url, height: 300, width: 400, crop: :fill %>
+<% end %>
+<%= link_to 'Change pictures', flat_images_path(@flat) %>
 <p><%= @flat.address %></p>
 <p><%= @flat.description %></p>
 <p><%=@flat.price%>€ per night</p>
 <p><%= link_to 'Request to book', new_flat_reservation_path(@flat) %></p>
-
-<p> <%= link_to "View all listings", flats_path %> </p>
-<p> <%= link_to "Back to listings", flats_path %> </p>
+<div class="booking-info">
+    <% @flat.reservations.each do |res| %>
+    <p>Booked from: <%= res.start_date %></p>
+    <p>To: <%= res.end_date %></p>
+  <% end %>
+</div>
+<p> <%= link_to "View all listings", flats_path, class: 'btn btn-primary' %> </p>
+<p> <%= link_to "Back to listings", flats_path, class: 'btn btn-primary' %> </p>
 <p> <%= link_to "Remove listing", flat_path(@flat),
           method: :delete,
           data: { confirm: "Are you sure you want to remove your #{@flat.name} listing?" }%></p>
