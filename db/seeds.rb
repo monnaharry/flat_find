@@ -37,7 +37,7 @@ end
   flat.price = (10..300).to_a.sample
   flat.user_id = User.all.sample.id
   flat.save
-  (1..3).to_a.sample.times do |image|
+  (3..5).to_a.sample.times do |image|
     image = Image.new
     image.remote_url_url = "https://source.unsplash.com/collection/1134892/#{(1..150).to_a.sample}"
     image.flat_id = flat.id
