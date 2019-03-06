@@ -1,7 +1,9 @@
 <h1><%= @flat.name %></h1>
 <p>Hosted by <%=@user.name %></p>
- <!--  <img src="<%=@flat.picture%>" alt="main picture" class="main-picture"> -->
- <%=cl_image_tag @flat.picture, height: 300, width: 400, crop: :fill %>
+<% @flat.images.each do |image| %>
+<%= cl_image_tag image.url, height: 300, width: 400, crop: :fill %>
+<% end %>
+<%= link_to 'Change pictures', flat_images_path(@flat) %>
 <p><%= @flat.address %></p>
 <p><%= @flat.description %></p>
 <p><%=@flat.price%>€ per night</p>

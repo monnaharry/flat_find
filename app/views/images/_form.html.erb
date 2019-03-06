@@ -1,5 +1,5 @@
 <%= simple_form_for [@flat, @image] do |f| %>
-  <%= f.input :url %>
-  <%= f.input :url_cache %>
-  <%= f.submit 'Add another photo' %>
+  <%= f.file_field :url %>
+  <%= f.input :url_cache, as: :hidden %>
+  <%= f.submit 'Upload a photo' %>
 <% end %>

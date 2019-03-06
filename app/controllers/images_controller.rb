@@ -1,6 +1,8 @@
 class ImagesController < ApplicationController
   def index
-
+    @flat = Flat.find(params[:flat_id])
+    @image = Image.new
+    @images = @flat.images
   end
 
   def create
@@ -12,6 +14,10 @@ class ImagesController < ApplicationController
   end
 
   def destroy
+    @image = Image.find(params[:id])
+    @flat = Flat.find(@image.flat.id)
+    @image.destroy
+    redirect_to flat_images_path(@flat)
   end
 
   private
