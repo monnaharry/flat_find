@@ -11,6 +11,7 @@ require 'faker'
 
 puts 'Cleaning database...'
 Reservation.destroy_all
+Image.destroy_all
 Flat.destroy_all
 User.destroy_all
 
@@ -30,11 +31,16 @@ end
 
 5.times do |flat|
   flat = Flat.new
-  flat.name = Faker::TvShows::Simpsons.location
+  flat.name = Faker::Construction.material + " " + %w(hut bungalow cottage ranch tower housebarn).sample
   flat.address = Faker::Address.full_address
   flat.description = Faker::Hipster.paragraphs([1, 2, 3].sample, true).join("\n")
   flat.price = (10..300).to_a.sample
-  flat.picture = "https://source.unsplash.com/collection/1134892/#{(1..150).to_a.sample}"
   flat.user_id = User.all.sample.id
   flat.save
+  (1..3).to_a.sample.times do |image|
+    image = Image.new
+    image.remote_url_url = "https://source.unsplash.com/collection/1134892/#{(1..150).to_a.sample}"
+    image.flat_id = flat.id
+    image.save
+  end
 end

@@ -5,8 +5,9 @@
 <hr>
 <% @user.flats.each do |flat| %>
   <p>
-    <%= flat.name %>
+    <%= link_to flat.name, flat_path(flat) %>
     <%= flat.price %>
+
   </p>
 <% end %>
 <%= link_to 'Back to index', flats_path %>
