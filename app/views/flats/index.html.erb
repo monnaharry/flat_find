@@ -1,9 +1,29 @@
-<h1>Our homes</h1>
+<div class="container">
 
-<% @flats.each do |flat| %>
-  <% flat.images.each do |image| %>
-    <%= cl_image_tag image.url, height: 300, width: 400, crop: :fill %>
-  <% end %>
-    <h3> <%= link_to flat.name, flat_path(flat) %></h3>
+  <h2 class="page-title">What can we help you find?</h2>
+
+
+  <div class="cards-index-container">
+    <% @flats.each do |flat| %>
+      <% flat.images.each do |image| %>
+      <%= link_to flat_path(flat), action: 'go' do %>
+          <div class="card-trip">
+            <%= cl_image_tag image.url, height: 300, width: 400, crop: :fill %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= flat.name %></h2>
+                <p><%= flat.description.split[0...20].join(' ') %></p>
+              </div>
+              <h2 class="card-trip-pricing">£<%= flat.price %></h2>
+              <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
-  <% end %>
+
+
+</div>
+
+
