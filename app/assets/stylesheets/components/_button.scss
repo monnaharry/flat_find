@@ -3,7 +3,7 @@ $dark-gray: #484848;
 
 .btn-primary-teal {
   background-color: $teal;
-  color: white;
+  color: white !important;
   padding: 10px 18px;
   border-radius: 6px;
   font-size: 15px;
@@ -29,6 +29,8 @@ $dark-gray: #484848;
   border-radius: 6px;
   width: 100px;
   font-size: 15px;
+  min-width: 200px;
+  max-width: 500px;
 }
 
 
