@@ -1,4 +1,4 @@
-<div class="container0">
+<!-- <div class="container0"> -->
 
 <div class="container1">
   <h2><%= @flat.name %></h2>
@@ -14,7 +14,14 @@
   <% end %>
 </div>
 
-  <%= link_to 'Change pictures', flat_images_path(@flat) %>
+<ul class="list-inline ">
+  <li><%= link_to 'Change pictures', flat_images_path(@flat) %></li>
+  <li>  <%= link_to "Remove listing", flat_path(@flat),
+              method: :delete,
+              data: { confirm: "Are you sure you want to remove your #{@flat.name} listing?" }%></li>
+  <li> <%= link_to "Back to listings", flats_path %></li>
+</ul>
+
   <p><%= @flat.address %></p>
   <p><%= @flat.description %></p>
   <p><%=@flat.price%>€ per night</p>
@@ -28,10 +35,6 @@
   <div class="container1">
     <p> <%= link_to "Back to listings", flats_path, class: 'btn btn-primary-teal' %> </p>
 
-    <p> <%= link_to "Remove listing", flat_path(@flat),
-              method: :delete,
-              data: { confirm: "Are you sure you want to remove your #{@flat.name} listing?" },
-              class: 'btn btn-secondary-teal'
-              %></p>
+
   </div>
-</div>
+<!-- </div> -->
