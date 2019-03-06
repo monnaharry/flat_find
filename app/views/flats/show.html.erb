@@ -26,9 +26,12 @@
     <% end %>
   </div>
   <div class="container1">
-    <p> <%= link_to "Back to listings", flats_path, class: 'btn btn-primary' %> </p>
+    <p> <%= link_to "Back to listings", flats_path, class: 'btn btn-primary-teal' %> </p>
+
     <p> <%= link_to "Remove listing", flat_path(@flat),
               method: :delete,
-              data: { confirm: "Are you sure you want to remove your #{@flat.name} listing?" }%></p>
+              data: { confirm: "Are you sure you want to remove your #{@flat.name} listing?" },
+              class: 'btn btn-secondary-teal'
+              %></p>
   </div>
 </div>
