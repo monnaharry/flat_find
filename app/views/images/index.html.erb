@@ -4,7 +4,10 @@
 method: :delete,
 data: { confirm: "Are you sure?" } %>
 <% end %>
-
+<hr>
 <%= render 'form' %>
+<hr>
 
-<%= link_to 'Back to flat', flat_path(@flat) %>
+<div class="photo-back-button">
+  <%= link_to 'Back to flat', flat_path(@flat), class: 'btn btn-primary' %>
+</div>
