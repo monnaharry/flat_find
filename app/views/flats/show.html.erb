@@ -1,26 +1,26 @@
 <!-- <div class="container0"> -->
-
-<div class="container1">
-  <h2><%= @flat.name %></h2>
-  <h4>Hosted by <%=@user.name %></h4>
-</div>
+<div class="show-page-container">
 
 
-<div class="container2">
-  <% @flat.images.each do |image| %>
-  <div class="bw">
-  <%= cl_image_tag image.url, height: 300, width: 400, crop: :fill %>
+  <div class="banner" style="background-image: url(<%= cl_image_path(@flat.images.first.url, options = {:crop => "crop", :gravity=>"face"})%>)">
+    <div class="banner-content">
+    </div>
   </div>
-  <% end %>
-</div>
 
-<ul class="list-inline ">
-  <li><%= link_to 'Change pictures', flat_images_path(@flat) %></li>
-  <li>  <%= link_to "Remove listing", flat_path(@flat),
-              method: :delete,
-              data: { confirm: "Are you sure you want to remove your #{@flat.name} listing?" }%></li>
-  <li> <%= link_to "Back to listings", flats_path %></li>
-</ul>
+
+
+  <div class="container1">
+    <h2><%= @flat.name %></h2>
+    <h4>Hosted by <%=@user.name %></h4>
+  </div>
+
+  <ul class="list-inline show-page-links">
+    <li><%= link_to 'Change pictures', flat_images_path(@flat) %></li>
+    <li>  <%= link_to "Remove listing", flat_path(@flat),
+                method: :delete,
+                data: { confirm: "Are you sure you want to remove your #{@flat.name} listing?" }%></li>
+    <li> <%= link_to "Back to listings", flats_path %></li>
+  </ul>
 
   <p><%= @flat.address %></p>
   <p><%= @flat.description %></p>
@@ -37,4 +37,7 @@
 
 
   </div>
+</div>
+
+
 <!-- </div> -->
