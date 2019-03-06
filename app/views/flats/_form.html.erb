@@ -4,7 +4,7 @@
   <%= f.input :guest, label: 'Guests', collection: 1..5, prompt: 'Select number of guests' %>
   <%= f.input :property_type, collection: ['Apartment', 'House', 'Cabin', 'Yurt', 'Car'], prompt: 'Select property type'%>
   <%= f.input :room_type, collection: ['Shared Room', 'Private Room', 'Full Place'], prompt: 'Select type of room' %>
-  <%= f.input :description, placeholder: 'Tell us about your place' %>
+  <%= f.input :description, placeholder: 'Tell us about your place', :input_html => {:minlength => 160 } %>
   <%= f.input :bathroom, label: 'Bathrooms', collection: 1..5, prompt: 'Select number of bathrooms' %>
   <%= f.input :bed, label: 'Beds', collection: 1..5, prompt: 'Select number of beds' %>
   <%= f.input :kitchen %>
