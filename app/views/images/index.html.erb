@@ -5,7 +5,14 @@ method: :delete,
 data: { confirm: "Are you sure?" } %>
 <% end %>
 <hr>
-<%= render 'form' %>
+<div class="container">
+  <div class="photo-headline">
+    <div class="photo-form">
+      <p>Upload a photo</p>
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
 <hr>
 
 <div class="photo-back-button">
