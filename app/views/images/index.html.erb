@@ -5,6 +5,7 @@
     <%= link_to 'Delete', image_path(image), class: "btn btn-primary-teal delete-photo",
     method: :delete,
     data: { confirm: "Are you sure?" } %>
+    <br>
     <% end %>
   </div>
 </div>
@@ -19,6 +20,5 @@
 </div>
 <hr>
 
-<div class="photo-back-button">
-  <%= link_to 'Back to flat', flat_path(@flat), class: 'btn btn-primary' %>
-</div>
+
+  <%= link_to 'Back to flat', flat_path(@flat), class: 'btn btn-primary-teal btn-back' %>
