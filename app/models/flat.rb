@@ -9,4 +9,12 @@ class Flat < ApplicationRecord
   validates :address, presence: true
   validates :description, presence: true
   validates :price, presence: true, numericality: true
+
+  def display_main_image
+    if self.images.first.nil?
+      "http://floorplans.houseplansandmore.com/091D/091D-0400/091D-0400-front-main-8.jpg"
+    else
+      self.images.first.url
+    end
+  end
 end
