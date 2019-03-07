@@ -2,11 +2,18 @@
 <div class="show-page-container">
 
 
-  <div class="banner" style="background-image: url(<%= cl_image_path(@flat.images.first.url, options = {:crop => "crop", :gravity=>"face"})%>)">
-    <div class="banner-content">
-    </div>
-  </div>
 
+
+  <% if @flat.images.first == nil %>
+    <div class="banner" style="background-image: url(<%= cl_image_path("https://i.ytimg.com/vi/jUmIeyMsYXE/maxresdefault.jpg", :crop => "fill")%>)">
+      <div class="banner-content"></div>
+    </div>
+  <% else %>
+    <div class="banner" style="background-image: url(<%= cl_image_path(@flat.images.first.url, :crop => "fill")%>)">
+      <div class="banner-content">
+      </div>
+    </div>
+  <% end %>
 
 
   <div class="container1">
