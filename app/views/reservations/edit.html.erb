@@ -1,0 +1,6 @@
+<h1>Accept or Decline the reservation</h1>
+
+<%= simple_form_for @reservation do |f| %>
+  <%= f.input :status, collection: ["Pending", "Decline", "Approved"] %>
+  <%= f.submit %>
+<% end %>
