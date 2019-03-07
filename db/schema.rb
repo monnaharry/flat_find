@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_143918) do
+ActiveRecord::Schema.define(version: 2019_03_07_133229) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +31,8 @@ ActiveRecord::Schema.define(version: 2019_03_06_143918) do
     t.string "room_type"
     t.integer "guest"
     t.string "property_type"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
@@ -44,7 +47,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_143918) do
   create_table "reservations", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
-    t.boolean "status"
+    t.string "status", default: "Pending"
     t.integer "total_price"
     t.bigint "user_id"
     t.bigint "flat_id"
@@ -67,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_143918) do
     t.string "gender"
     t.string "phone_number"
     t.string "name"
-    t.string "profile_pic"
+    t.string "profile_pic", default: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
