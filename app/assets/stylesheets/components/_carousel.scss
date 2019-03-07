@@ -1,0 +1,46 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 60vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+}
+
+.carousel-inner > .item > img {
+  width: 100vw !important;
+}
+
+.carousel-control .icon-prev:before {
+    color: white !important;
+}
+
+.carousel-control .icon-next:before {
+    color: white !important;
+}
+
+
+.carousel-control.left {
+    background-image: none;
+}
+
+
+.carousel-control.right {
+    background-image: none;
+}
+
+
+#change-pix-btn a {
+  position: absolute;
+  bottom: 22px;
+  right: 22px;
+  width: 100px;
+  background-color: white;
+  border: none;
+}
+
+.carousel-container {
+  position: relative !important;
+}
