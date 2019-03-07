@@ -1,20 +1,9 @@
 <!-- <div class="container0"> -->
 <div class="show-page-container">
 
-
-
-
-  <% if @flat.images.first == nil %>
-    <div class="banner" style="background-image: url(<%= cl_image_path("https://i.ytimg.com/vi/jUmIeyMsYXE/maxresdefault.jpg", :crop => "fill")%>)">
-      <div class="banner-content"></div>
-    </div>
-  <% else %>
-    <div class="banner" style="background-image: url(<%= cl_image_path(@flat.images.first.url, :crop => "fill")%>)">
-      <div class="banner-content">
-      </div>
-    </div>
-  <% end %>
-
+  <div class="banner" style="background-image: url(<%= cl_image_path(@flat.display_main_image, :crop => "fill")%>)">
+    <div class="banner-content"></div>
+  </div>
 
   <div class="container1">
     <h2><%= @flat.name %></h2>

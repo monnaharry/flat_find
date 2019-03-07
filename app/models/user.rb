@@ -7,4 +7,10 @@ class User < ApplicationRecord
   has_many :flats, dependent: :destroy
   has_many :reservations, dependent: :destroy
   validates :name, presence: true
+  after_create :adding_default_avatar
+
+  def adding_default_avatar
+    self.remote_profile_pic_url = "https://www.drupal.org/files/issues/default-avatar.png"
+    self.save
+  end
 end
