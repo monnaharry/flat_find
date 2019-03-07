@@ -1,50 +1,53 @@
-<!-- <div class="container0"> -->
-<div class="show-page-container">
+<% if @flat.user == current_user %>
+  <%= render 'edit-message' %>
+<% end %>
 
+<%= render 'carousel' %>
 
-
-
-  <% if @flat.images.first == nil %>
-    <div class="banner" style="background-image: url(<%= cl_image_path("https://i.ytimg.com/vi/jUmIeyMsYXE/maxresdefault.jpg", :crop => "fill")%>)">
-      <div class="banner-content"></div>
+<div class="show-page-content-container">
+  <div class="show-page-heading-wrapper">
+    <div class="show-page-property-tag">
+      <% if !@flat.property_type.nil? %>
+        <p><%= @flat.property_type %></p>
+      <% else %>
+        <p>Entire House</p>
+      <% end %>
     </div>
-  <% else %>
-    <div class="banner" style="background-image: url(<%= cl_image_path(@flat.images.first.url, :crop => "fill")%>)">
-      <div class="banner-content">
+    <div class="show-page-heading">
+      <div class="show-page-heading-left">
+        <h2><%= @flat.name %></h2>
+        <p><%= @flat.address %></p>
+      </div>
+      <div class="show-page-heading-right text-center">
+        <%= cl_image_tag @flat.user.profile_pic, width: 75, height: 75, crop: :thumb, gravity: :face, class: "card-trip-user avatar avatar-bordered" %>
+          <p><%= @flat.user.name %></p>
       </div>
     </div>
-  <% end %>
-
-
-  <div class="container1">
-    <h2><%= @flat.name %></h2>
-    <h4>Hosted by <%=@user.name %></h4>
   </div>
 
-  <ul class="list-inline show-page-links">
-    <li><%= link_to 'Change pictures', flat_images_path(@flat) %></li>
-    <li>  <%= link_to "Remove listing", flat_path(@flat),
-                method: :delete,
-                data: { confirm: "Are you sure you want to remove your #{@flat.name} listing?" }%></li>
-    <li> <%= link_to "Back to listings", flats_path %></li>
-  </ul>
+<hr>
 
-  <p><%= @flat.address %></p>
-  <p><%= @flat.description %></p>
-  <p><%=@flat.price%>€ per night</p>
-  <p><%= link_to 'Request to book', new_flat_reservation_path(@flat), class: 'btn btn-secondary-teal' %></p>
-  <div class="booking-info">
-      <% @flat.reservations.each do |res| %>
-      <p>Booked from: <%= res.start_date %></p>
-      <p>To: <%= res.end_date %></p>
-    <% end %>
+  <div class="show-page-listing-details">
+    <h4><%= @flat.property_type %></h4>
+    <ul class="list-inline show-page-links">
+      <li> <%= @flat.guest %> guests </li>
+      <li> <%= @flat.bed %> beds </li>
+      <li> <%= @flat.bathroom %> bathrooms </li>
+    </ul>
   </div>
-  <div class="container1">
-    <p> <%= link_to "Back to listings", flats_path, class: 'btn btn-primary-teal' %> </p>
 
+  <hr>
 
+  <div class="show-page-description">
+    <h4>The Place</h4>
+    <p><%= @flat.description %></p>
   </div>
+
 </div>
 
-
-<!-- </div> -->
+<div class="show-page-booking-info-container">
+  <div class="show-page-booking-info">
+    <p><%=@flat.price%>€ per night</p>
+    <%= link_to 'Request to book', new_flat_reservation_path(@flat), class: "btn btn-primary-teal" %>
+  </div>
+</div>
