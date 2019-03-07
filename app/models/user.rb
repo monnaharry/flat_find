@@ -10,7 +10,9 @@ class User < ApplicationRecord
   after_create :adding_default_avatar
 
   def adding_default_avatar
-    self.remote_profile_pic_url = "https://www.drupal.org/files/issues/default-avatar.png"
-    self.save
+    if self.profile_pic.nil?
+      self.remote_profile_pic_url = "https://www.drupal.org/files/issues/default-avatar.png"
+      self.save
+    end
   end
 end
