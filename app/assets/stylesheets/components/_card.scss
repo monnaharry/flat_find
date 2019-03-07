@@ -38,7 +38,9 @@
   position: absolute;
   right: 16px;
   top: -20px;
-  width: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 
@@ -49,3 +51,57 @@
   flex-wrap: wrap;
 }
 
+.card-trip-map > img {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.card-trip-map {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: -10px;
+  margin-bottom: -15px;
+  width: 341px;
+  height: 250px;
+}
+
+.card-trip-map h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip-map p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-trip-map .card-trip-infos-map {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos-map .card-trip-user-map {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.price-popup-card {
+  padding: 4px;
+  background: white;
+  color: black;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 20%;
+  font-weight: bold;
+}

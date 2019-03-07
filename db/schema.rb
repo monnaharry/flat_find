@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_03_07_124231) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +31,8 @@ ActiveRecord::Schema.define(version: 2019_03_07_124231) do
     t.string "room_type"
     t.integer "guest"
     t.string "property_type"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 

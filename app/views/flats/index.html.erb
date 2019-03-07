@@ -14,12 +14,26 @@
                 <p><%= flat.description.split[0...20].join(' ') %></p>
               </div>
               <h2 class="card-trip-pricing">£<%= flat.price %></h2>
-              <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+              <%= cl_image_tag flat.user.profile_pic, width: 150, height: 150, crop: :thumb, gravity: :face, class: "card-trip-user avatar avatar-bordered" %>
             </div>
           </div>
       <% end %>
     <% end %>
   </div>
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px; .markers {
+    background-image: url('picture.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    }"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
 
 
 </div>
