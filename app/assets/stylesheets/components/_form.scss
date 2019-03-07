@@ -35,3 +35,28 @@
 .form-check label {
   margin-left: 10px;
 }
+
+.photo-headline {
+  text-align: center;
+}
+.photo-form {
+  margin: auto;
+  justify-content: center;
+  max-width: 500px;
+  padding: 80px 20px;
+  border: solid 1px;
+  border-color: rgba(220,220,220, 0.9);
+  text-align: center;
+  margin-bottom: 10px;
+  label {
+    font-weight: normal;
+    font-size: 15px;
+  }
+}
+
+.photo-form .btn-primary-teal {
+  width: 100px;
+  border: 1px;
+  margin-top: 15px;
+}
+

@@ -1,5 +1,6 @@
-<%= simple_form_for [@flat, @image] do |f| %>
-  <%= f.file_field :url %>
-  <%= f.input :url_cache, as: :hidden %>
-  <%= f.submit 'Upload a photo' %>
-<% end %>
+  <%= simple_form_for [@flat, @image] do |f| %>
+    <%= f.file_field :url, class: 'btn-primary-teal'  %>
+    <%= f.input :url_cache, as: :hidden %>
+    <%= f.submit 'Upload a photo', class: 'btn btn-primary-teal' %>
+  <% end %>
+

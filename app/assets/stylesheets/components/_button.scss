@@ -16,7 +16,12 @@ $dark-gray: #484848;
   justify-content: center;
 }
 
-
+.delete-photo {
+  max-width: 400px;
+  min-width: 150px;
+  border-radius: 0px;
+  color: white !important;
+}
 .btn-primary-teal:hover {
   text-decoration: none !important;
   color: white;
@@ -33,4 +38,7 @@ $dark-gray: #484848;
   max-width: 500px;
 }
 
-
+.btn-back {
+  color: white !important;
+  max-width: 125px;
+}
