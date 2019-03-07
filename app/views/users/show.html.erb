@@ -42,7 +42,13 @@
 <% end %>
 <hr>
 <h3>Your planned trips</h3>
-<p>Here is where your trips would be</p>
+<div class="planned-trips">
+<% current_user.reservations.each do |res| %>
+  <p><%= Flat.find(res.flat_id).name %></p>
+  <p>Status: <%= res.status %></p>
+  <p><%= res.start_date %> - <%= res.end_date %></p>
+<% end %>
+</div>
 <hr>
 
 <%= link_to 'Back to index', flats_path, class: 'btn btn-secondary-teal' %>
