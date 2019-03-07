@@ -26,7 +26,7 @@ puts 'Generating fake data...'
   user.password_confirmation = 'password'
   user.birth_date = Faker::Date.birthday(18, 65)
   user.phone_number = Faker::PhoneNumber.cell_phone
-  user.remote_profile_pic_url = "https://source.unsplash.com/collection/3107814/#{(1..150).to_a.sample}"
+  user.remote_profile_pic_url = "https://source.unsplash.com/collection/3107814/600x600/?sig=#{(1..150).to_a.sample}"
   user.save
 end
 
@@ -37,10 +37,12 @@ end
   flat.description = Faker::Hipster.paragraphs([1, 2, 3].sample, true).join("\n")
   flat.price = (10..300).to_a.sample
   flat.user_id = User.all.sample.id
+  flat.longitude = rand(2.002..2.222).round(5)
+  flat.latitude = rand(41.012..41.722).round(5)
   flat.save
   (3..5).to_a.sample.times do |image|
     image = Image.new
-    image.remote_url_url = "https://source.unsplash.com/collection/1134892/#{(1..150).to_a.sample}"
+    image.remote_url_url = "https://source.unsplash.com/collection/1134892/600x600/?sig=#{(1..150).to_a.sample}"
     image.flat_id = flat.id
     image.save
   end
