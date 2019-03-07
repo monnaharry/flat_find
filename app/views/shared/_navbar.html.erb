@@ -4,6 +4,17 @@
     <%= image_tag "airbnb-logo.svg", height: 50 %>
   <% end %>
 
+  <div class="navbar-wagon-left">
+    <%=form_tag flats_path, method: :get do  %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "How about Bali?"
+    %>
+    <% end %>
+
+  </div>
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
