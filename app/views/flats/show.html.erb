@@ -32,7 +32,7 @@
   <p><%= @flat.address %></p>
   <p><%= @flat.description %></p>
   <p><%=@flat.price%>€ per night</p>
-  <p><%= link_to 'Request to book', new_flat_reservation_path(@flat) %></p>
+  <p><%= link_to 'Request to book', new_flat_reservation_path(@flat), class: 'btn btn-secondary-teal' %></p>
   <div class="booking-info">
       <% @flat.reservations.each do |res| %>
       <p>Booked from: <%= res.start_date %></p>

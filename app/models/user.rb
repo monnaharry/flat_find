@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   mount_uploader :profile_pic, PhotoUploader
   has_many :flats, dependent: :destroy
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
   validates :name, presence: true
 end
