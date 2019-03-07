@@ -36,6 +36,9 @@
 
 }
 
+// carousel controls
+
+
 .banner {
   color: white;
   text-align: center;
@@ -44,6 +47,27 @@
   background-size: cover !important;
   display: flex;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
 }
 
+.carousel-inner > .item > img {
+  width: 100vw !important;
+}
+
+.carousel-control .icon-prev:before {
+    color: white !important;
+}
+
+.carousel-control .icon-next:before {
+    color: white !important;
+}
+
+
+.carousel-control.left {
+    background-image: none;
+}
+
+
+.carousel-control.right {
+    background-image: none;
+}
