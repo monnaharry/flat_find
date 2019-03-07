@@ -18,7 +18,7 @@ const initMapbox = () => {
       .addTo(map);
       flarker._element.innerHTML = `
         <div class="price-popup-card">
-          ${marker.flice}
+          £${marker.flice}
         </div>
       `
     });
