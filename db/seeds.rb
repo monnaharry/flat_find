@@ -37,6 +37,8 @@ end
   flat.description = Faker::Hipster.paragraphs([1, 2, 3].sample, true).join("\n")
   flat.price = (10..300).to_a.sample
   flat.user_id = User.all.sample.id
+  flat.longitude = rand(2.002..2.222).round(5)
+  flat.latitude = rand(41.002..42.222).round(5)
   flat.save
   (3..5).to_a.sample.times do |image|
     image = Image.new
