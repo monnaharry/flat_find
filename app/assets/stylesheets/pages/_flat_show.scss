@@ -1,6 +1,15 @@
 .show-page-content-container {
   width: 70%;
   margin: auto;
+  h4 {
+    font-size: 16px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+  }
+  p {
+    font-size: 16px;
+    font-weight: lighter;
+  }
 }
 
 
@@ -50,5 +59,42 @@
   color: rgb(118, 118, 118) !important;
 }
 
+.show-page-listing-details {
+  li {
+    font-size: 16px;
+    font-weight: lighter;
+  }
+}
 
+.show-page-description {
+  margin-bottom: 40px;
+}
+
+.show-page-booking-info {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    width: 100px;
+    margin: 0px;
+    background-color: #FC5C63;
+  }
+  p {
+    margin: 0px;
+  }
+}
+
+
+
+.show-page-booking-info-container {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid lightgray;
+  padding: 25px 0px;
+  position: sticky;
+  bottom: 0px;
+  background-color: white;
+}
 

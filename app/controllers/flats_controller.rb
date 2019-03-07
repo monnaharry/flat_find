@@ -43,13 +43,18 @@ class FlatsController < ApplicationController
     redirect_to flats_path
   end
 
+  # to be deleted and replaced with a default value in table
+  # def property_type_placeholder
+  #   @flat = Flat.find(params[:id])
+  #   !@flat.property_type.nil? ? @flat.property_type : "Entire House"
+  # end
+
   private
 
   def flat_params
     params.require(:flat).permit!
   end
 end
-
 
 
 
