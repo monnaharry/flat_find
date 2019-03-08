@@ -37,7 +37,7 @@
 
     <h3>Reservations to your flats</h3>
 
-    <!-- reservation status logic -->
+    <!-- host reservation confirmation logic -->
 
     <div class="profile-user-flats-list">
       <div class="profile-list-item">
@@ -88,33 +88,52 @@
 
 
     <hr>
-    <h3>Confirmed bookings</h3>
 
-    <% @user.flats.each do |flat| %>
-    <% flat.reservations.each do |res| %>
-      <% if res.status == "Approved" %>
-        <div class="reservation-status">
-          <p><%=  User.find(res.user_id).name %>
-            is confirmed to stay in: <%= res.flat.name %></p>
-          <p>Between: <%= res.start_date %> and <%= res.end_date %></p>
-          <%= link_to 'Change reservation status', edit_reservation_path(res), class: 'btn btn-warning' %>
-        </div>
-        <br>
+    <h3>Trip Confirmations</h3>
+
+    <div class="profile-user-flats-list">
+      <% @user.flats.each do |flat| %>
+        <% flat.reservations.each do |res| %>
+          <% if res.status == "Approved" %>
+
+            <div class="profile-list-item">
+              <div class="flat-image">
+                <%= link_to  cl_image_tag(flat.images.first.url, width: 150, height: 115), flat_path(flat) %>
+              </div>
+              <div class="flat-details">
+                <div class="flat-details-left">
+                   <h4><%= res.flat.name %></h4>
+                  <p> You're trip has been confirmed for <%= res.start_date.strftime("%b %d, %Y") %> - <%= res.end_date.strftime("%b %d, %Y") %></p>
+                </div>
+                <div class="flat-details-right">
+                  <%= link_to 'Change Reservation', edit_reservation_path(res), class: 'btn btn-teal' %>
+                  </div>
+              </div>
+            <% end %>
+            </div>
+
+        <% end %>
       <% end %>
-    <% end %>
-    <% end %>
-    <hr>
-    <h3>Your planned trips</h3>
-    <div class="planned-trips">
-    <% current_user.reservations.each do |res| %>
-    <p><%= Flat.find(res.flat_id).name %></p>
-    <p>Status: <%= res.status %></p>
-    <p><%= res.start_date %> - <%= res.end_date %></p>
-    <% end %>
     </div>
+
+
+
     <hr>
 
-    <%= link_to 'Back to index', flats_path, class: 'btn btn-secondary-teal' %>
+    <h3>Requested Bookings</h3>
+
+    <div class="profile-user-flats-list">
+      <div class="planned-trips">
+        <% current_user.reservations.each do |res| %>
+        <p><%= Flat.find(res.flat_id).name %></p>
+        <p>Status: <%= res.status %></p>
+        <p><%= res.start_date %> - <%= res.end_date %></p>
+        <% end %>
+      </div>
+
+    </div>
+
+
   </div>
 
 </div>
