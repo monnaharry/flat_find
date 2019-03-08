@@ -25,6 +25,7 @@ puts 'Generating fake data...'
   user.password_confirmation = 'password'
   user.birth_date = Faker::Date.birthday(18, 65)
   user.phone_number = Faker::PhoneNumber.cell_phone
+  user.save
   user.remote_profile_pic_url = "https://source.unsplash.com/collection/3107814/600x600/?sig=#{(1..150).to_a.sample}"
   user.save
 end

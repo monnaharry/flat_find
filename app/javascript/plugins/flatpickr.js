@@ -7,6 +7,7 @@ flatpickr(".datepicker", {
   allowInput: true,
   altInput: true, // nice date format Month day, year
   mode: "range",
+  minDate: "today",
   // disable: [
   //   @flat.reservations.forEach(reservation)
 
