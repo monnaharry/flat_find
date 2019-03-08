@@ -1,10 +1,9 @@
-<div class="container">
-
-  <h2 class="page-title"><%= pluralize @flats.count, "home" %></h2>
-
-
-  <div class="cards-index-meta-container">
-  <div class="cards-grid col-sm-7">
+<div class="cards-index-meta-container">
+  <div class="left-container">
+    <div class="header-index-page">
+      <h2 class="index-title"><%= pluralize @flats.count, "home" %></h2>
+    </div>
+    <div class="cards-grid col-sm-7">
       <% @flats.each do |flat| %>
         <%= link_to flat_path(flat), action: 'go' do %>
             <div class="card-trip">
@@ -21,6 +20,7 @@
             </div>
         <% end %>
       <% end %>
+      </div>
   </div>
     <div
       id="map"
@@ -41,7 +41,4 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     ></div>
   </div>
-
-</div>
-
-
+  </div>
