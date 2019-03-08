@@ -1,9 +1,39 @@
 // Specific CSS for your home-page
 .wrapper-home {
-  background-image: linear-gradient(180deg, rgba(0,0,0,0.80015756302521) 0%, rgba(0,0,0,0.4192051820728291) 38%, rgba(0,0,0,0.3603816526610645) 72%), url('eberhard-grossgasteiger-629643-unsplash.jpg');
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.80015756302521) 0%, rgba(0,0,0,0.4492051820728291) 38%, rgba(0,0,0,0.3603816526610645) 72%), url('raymond-ancog-1154977-unsplash.jpg');
   background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: 100%;
   height: 100vh;
   color: #eee;
   text-align: center;
-  background-position: 250px 0px; //first column is left/right
+  // background-position: top; //first column is left/right
+}
+
+.search-home {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper-home {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.search-go {
+  border-radius: 0px;
+}
+
+.form-home {
+  text-align: center;
+}
+
+.header {
+  h1 {
+    margin-bottom: -10px;
+  }
 }
