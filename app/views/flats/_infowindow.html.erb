@@ -1,14 +1,16 @@
 
+
 <%= link_to flat_path(flat), action: 'go' do %>
 <div class="card-trip-map">
   <%= cl_image_tag flat.display_main_image, height: 400, width: 500, crop: :fill %>
   <div class="card-trip-infos-map">
     <div>
       <h2><%= flat.name %></h2>
-      <p><%= flat.description.split[0...20].join(' ') %></p>
+      <p class="card-room-type"><%= flat.room_type %></p>
     </div>
     <h2 class="card-trip-pricing-map">£<%= flat.price %></h2>
     <%= cl_image_tag flat.user.profile_pic, width: 150, height: 150, crop: :thumb, gravity: :face, class: "card-trip-user-map" %>
   </div>
 </div>
 <% end %>
+
