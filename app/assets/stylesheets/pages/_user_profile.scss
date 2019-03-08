@@ -1,0 +1,65 @@
+.profile-heading-container {
+  display: flex;
+  margin-top: 40px;
+
+}
+
+.profile-page-avatar {
+  margin-right: 32px;
+}
+
+.profile-pic-update-form {
+  font-size: 12px;
+  .btn {
+    margin-bottom: 15px !important;
+  }
+}
+
+.profile-page-container {
+  h3 {
+    font-weight: bolder;
+    font-size: 18px;
+  }
+}
+
+.profile-list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  img {
+    margin-right: 32px;
+  }
+}
+
+.flat-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h4 {
+    font-weight: bolder;
+    font-size: 18px;
+  }
+  h5 {
+    font-weight: bolder;
+    font-size: 16px;
+    margin-left: 15px;
+  }
+  p {
+    font-weight: lighter;
+    font-size: 16px;
+  }
+}
+
+.flat-details-left {
+}
+
+.flat-details-right {
+  margin-left: 32px;
+
+}
+
+
+#requested-bookings-flat-name {
+  margin-top: 0px;
+}
