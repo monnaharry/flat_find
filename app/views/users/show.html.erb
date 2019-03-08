@@ -131,6 +131,7 @@
           <h4><%= Flat.find(res.flat_id).name %></h4>
           <p style="margin-top: 10px;"><%= res.start_date.strftime("%b %d, %Y") %> - <%= res.end_date.strftime("%b %d, %Y") %></p>
           <h5><%= res.status %></h5>
+          <h5>€<%= res.total_price %></h5>
         </div>
       </div>
       <hr>
