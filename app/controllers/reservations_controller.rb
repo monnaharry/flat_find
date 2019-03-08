@@ -11,14 +11,18 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
-    @flat = Flat.find(params[:flat_id])
-    @reservation.flat = @flat
-    @reservation.user = current_user
-    if @reservation.save
-      redirect_to flats_path
-    else
-      render :new
+      @reservation = Reservation.new(reservation_params)
+      @flat = Flat.find(params[:flat_id])
+      @reservation.flat = @flat
+      @reservation.user = current_user
+      if current_user.nil?
+        redirect_to user_session_path
+      else
+        if @reservation.save
+          redirect_to flats_path
+        else
+          render :new
+        end
     end
   end
 
