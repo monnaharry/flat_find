@@ -43,7 +43,7 @@ end
 
   Flat.create!({
     name: Faker::Construction.material + " " + %w(hut bungalow cottage ranch tower housebarn).sample,
-    address: "R Desidério Bessa 32, Lisbon",
+    address: "Lisbon",
     description: "Enjoy Lisbon, while living in a new, apartment. It is centrally-heated apartment in a central historic part of town!",
     price: (10..300).to_a.sample,
     user_id: User.all.sample.id,
@@ -113,7 +113,7 @@ end
 
     Flat.create!({
     name: Faker::Construction.material + " " + %w(hut bungalow cottage ranch tower housebarn).sample,
-    address: "Avenida de Santa Catalina, Habana, Cuba",
+    address: "Habana, Cuba",
     description: "Authentic Cuban newly renovated apartment. Close to the main attractions and old Havana. Restaurants, bars, supermarkets and tourist attractions all in walking distance.",
     price: (10..300).to_a.sample,
     user_id: User.all.sample.id,
@@ -128,7 +128,7 @@ end
   Flat.create!({
     name: Faker::Construction.material + " " + %w(hut bungalow cottage ranch tower housebarn).sample,
     address: "Avenida Varona, Habana, Cuba",
-    description: "I can't describe how you will feel staying here in this stylish bedroom located on the roof top in Old Havana with awe inspiring views to the city and the ocean",
+    description: "I can't describe how you will feel staying here where this stylish bedroom is located on the roof top in Old Havana with awe inspiring views to the city and the ocean",
     price: (10..300).to_a.sample,
     user_id: User.all.sample.id,
     # longitude: rand(2.002..2.222).round(5),
