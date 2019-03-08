@@ -13,8 +13,8 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @flat = Flat.find(params[:flat_id])
-    @reservation.start_date = reservation_params[:dates].split(' to ')[0]
-    @reservation.end_date = reservation_params[:dates].split(' to ')[1]
+    @reservation.start_date = @reservation.dates.split(' to ')[0]
+    @reservation.end_date = @reservation.dates.split(' to ')[1]
     @reservation.flat = @flat
     @reservation.user = current_user
     if @reservation.save
