@@ -1,23 +1,26 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <div>
-    <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "airbnb-logo.svg", height: 50 %>
-    <% end %>
-  </div>
 
-  <div class="navbar-wagon-left has-feedback">
-    <div class="search">
-      <%=form_tag flats_path, method: :get do  %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "How about Bali?"
-      %>
+  <div class="navbar-left-content">
+    <div class="navbar-logo">
+      <%= link_to flats_path, class: "navbar-wagon-brand" do %>
+        <%= image_tag "airbnb-logo.svg", height: 50 %>
+      <% end %>
     </div>
-    <i class="fas fa-search form-control-feedback"></i>
-    <% end %>
 
+    <div class="navbar-wagon-left has-feedback">
+      <div class="search">
+        <%=form_tag flats_path, method: :get do  %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "How about Bali?"
+        %>
+      </div>
+      <i class="fas fa-search form-control-feedback"></i>
+      <% end %>
+
+    </div>
   </div>
 
   <!-- Right Navigation -->

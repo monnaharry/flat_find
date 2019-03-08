@@ -19,6 +19,13 @@
   margin-left: -700px;
   box-shadow: 1px 1px 1px #f0f0f0;
   border-color: #f0f0f0;
+  flex: 0 0 75%;
+}
+
+
+.navbar-logo {
+  width: 100px;
+  flex: 0 0 auto;
 }
 
 .form-control-feedback {
@@ -33,6 +40,12 @@
   border-radius: 50%;
 }
 
+.navbar-left-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 30%;
+}
 /* Right section */
 .navbar-wagon-right {
   display: flex;
