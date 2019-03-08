@@ -1,19 +1,20 @@
-<h1>Hi <%= @user.name %>, welcome to your profile page</h1>
-<%= cl_image_tag @user.profile_pic, class: "avatar-large", width: 150, height: 150, crop: :thumb, gravity: :face%>
-<%= render 'form' %>
-<hr>
-<h3>Your flats</h3>
-<% @user.flats.each do |flat| %>
+<div class="page-container">
+  <h1>Hi <%= @user.name %>, welcome to your profile page</h1>
+    <%= cl_image_tag @user.profile_pic, class: "avatar-large", width: 150, height: 150, crop: :thumb, gravity: :face%>
+    <%= render 'form' %>
+  <hr>
+  <h3>Your flats</h3>
+  <% @user.flats.each do |flat| %>
   <p> <%= link_to flat.name, flat_path(flat) %>
       <%= flat.price %>
   </p>
-<% end %>
+  <% end %>
 
-<hr>
+  <hr>
 
-<h3>Reservations to your flats</h3>
+  <h3>Reservations to your flats</h3>
 
-<% @user.flats.each do |flat| %>
+  <% @user.flats.each do |flat| %>
   <% flat.reservations.each do |res| %>
   <% if res.status == "Pending" %>
     <div class="reservation-status">
@@ -22,12 +23,12 @@
       <% end %>
     </div>
   <% end %>
-<% end %>
+  <% end %>
 
-<hr>
-<h3>Confirmed bookings</h3>
+  <hr>
+  <h3>Confirmed bookings</h3>
 
-<% @user.flats.each do |flat| %>
+  <% @user.flats.each do |flat| %>
   <% flat.reservations.each do |res| %>
     <% if res.status == "Approved" %>
       <div class="reservation-status">
@@ -39,16 +40,18 @@
       <br>
     <% end %>
   <% end %>
-<% end %>
-<hr>
-<h3>Your planned trips</h3>
-<div class="planned-trips">
-<% current_user.reservations.each do |res| %>
+  <% end %>
+  <hr>
+  <h3>Your planned trips</h3>
+  <div class="planned-trips">
+  <% current_user.reservations.each do |res| %>
   <p><%= Flat.find(res.flat_id).name %></p>
   <p>Status: <%= res.status %></p>
   <p><%= res.start_date %> - <%= res.end_date %></p>
-<% end %>
-</div>
-<hr>
+  <% end %>
+  </div>
+  <hr>
 
-<%= link_to 'Back to index', flats_path, class: 'btn btn-secondary-teal' %>
+  <%= link_to 'Back to index', flats_path, class: 'btn btn-secondary-teal' %>
+
+</div>
