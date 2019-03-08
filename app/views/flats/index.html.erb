@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h2 class="page-title"><%=@flats.count%> homes</h2>
+  <h2 class="page-title"><%= pluralize @flats.count, "home" %></h2>
 
 
   <div class="cards-index-meta-container">

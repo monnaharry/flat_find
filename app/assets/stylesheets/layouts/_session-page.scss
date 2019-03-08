@@ -1,9 +1,17 @@
 .page-title {
-  margin-left: 15px;
   font-size: 28px;
   font-weight: bolder;
 }
 
 .photo-header {
   text-align: center;
+}
+
+
+.login-links {
+  display: flex;
+  flex-wrap: wrap;
+  a {
+    margin-right: 20px;
+  }
 }
