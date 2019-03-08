@@ -1,57 +1,95 @@
 <div class="page-container">
-  <h1>Hi <%= @user.name %>, welcome to your profile page</h1>
-    <%= cl_image_tag @user.profile_pic, class: "avatar-large", width: 150, height: 150, crop: :thumb, gravity: :face%>
-    <%= render 'form' %>
-  <hr>
-  <h3>Your flats</h3>
-  <% @user.flats.each do |flat| %>
-  <p> <%= link_to flat.name, flat_path(flat) %>
-      <%= flat.price %>
-  </p>
-  <% end %>
-
-  <hr>
-
-  <h3>Reservations to your flats</h3>
-
-  <% @user.flats.each do |flat| %>
-  <% flat.reservations.each do |res| %>
-  <% if res.status == "Pending" %>
-    <div class="reservation-status">
-        <%= res.flat.name %>
-        <%= link_to res.status, edit_reservation_path(res), class: 'btn btn-primary-teal' %>
-      <% end %>
-    </div>
-  <% end %>
-  <% end %>
-
-  <hr>
-  <h3>Confirmed bookings</h3>
-
-  <% @user.flats.each do |flat| %>
-  <% flat.reservations.each do |res| %>
-    <% if res.status == "Approved" %>
-      <div class="reservation-status">
-        <p><%=  User.find(res.user_id).name %>
-          is confirmed to stay in: <%= res.flat.name %></p>
-        <p>Between: <%= res.start_date %> and <%= res.end_date %></p>
-        <%= link_to 'Change reservation status', edit_reservation_path(res), class: 'btn btn-warning' %>
+  <div class="profile-page-container">
+    <div class="profile-heading-container">
+      <div class="profile-page-avatar">
+        <%= cl_image_tag @user.profile_pic, class: "avatar-large", width: 150, height: 150, crop: :thumb, gravity: :face%>
       </div>
-      <br>
-    <% end %>
-  <% end %>
-  <% end %>
-  <hr>
-  <h3>Your planned trips</h3>
-  <div class="planned-trips">
-  <% current_user.reservations.each do |res| %>
-  <p><%= Flat.find(res.flat_id).name %></p>
-  <p>Status: <%= res.status %></p>
-  <p><%= res.start_date %> - <%= res.end_date %></p>
-  <% end %>
-  </div>
-  <hr>
+      <div class="profile-pic-update-form">
+        <h1 class="page-title">Hi <%= @user.name.capitalize %>, welcome to your profile page</h1>
+        <%= render 'form' %>
+      </div>
+    </div>
 
-  <%= link_to 'Back to index', flats_path, class: 'btn btn-secondary-teal' %>
+    <hr>
+
+    <h3>Your flats</h3>
+
+    <div class="profile-user-flats-list">
+      <div class="profile-list-item">
+        <% @user.flats.each do |flat| %>
+        <div class="flat-image">
+          <%= link_to  cl_image_tag(flat.images.first.url, width: 150, height: 115), flat_path(flat) %>
+        </div>
+        <div class="flat-details">
+          <div class="flat-details-left">
+            <h4><%= flat.name %></h4>
+            <p><%= flat.description %></p>
+          </div>
+          <div class="flat-details-right">
+            <h5>€<%= flat.price %></h5>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>Reservations to your flats</h3>
+
+    <div class="profile-user-flats-list">
+      <div class="profile-list-item">
+        <% @user.flats.each do |flat| %>
+        <% flat.reservations.each do |res| %>
+        <div class="flat-image">
+          <%= link_to  cl_image_tag(flat.images.first.url, width: 150, height: 115), flat_path(flat) %>
+        </div>
+        <div class="flat-details">
+          <% if res.status == "Pending" %>
+              <div class="flat-details-left">
+                <h4><%= res.flat.name %></h4>
+                <p><%= flat.description %></p>
+              </div>
+              <div class="flat-details-right">
+                <%= link_to res.status, edit_reservation_path(res), class: 'btn btn-secondary-teal' %>
+              </div>
+              <% end %>
+
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+    <hr>
+    <h3>Confirmed bookings</h3>
+
+    <% @user.flats.each do |flat| %>
+    <% flat.reservations.each do |res| %>
+      <% if res.status == "Approved" %>
+        <div class="reservation-status">
+          <p><%=  User.find(res.user_id).name %>
+            is confirmed to stay in: <%= res.flat.name %></p>
+          <p>Between: <%= res.start_date %> and <%= res.end_date %></p>
+          <%= link_to 'Change reservation status', edit_reservation_path(res), class: 'btn btn-warning' %>
+        </div>
+        <br>
+      <% end %>
+    <% end %>
+    <% end %>
+    <hr>
+    <h3>Your planned trips</h3>
+    <div class="planned-trips">
+    <% current_user.reservations.each do |res| %>
+    <p><%= Flat.find(res.flat_id).name %></p>
+    <p>Status: <%= res.status %></p>
+    <p><%= res.start_date %> - <%= res.end_date %></p>
+    <% end %>
+    </div>
+    <hr>
+
+    <%= link_to 'Back to index', flats_path, class: 'btn btn-secondary-teal' %>
+  </div>
 
 </div>
