@@ -15,6 +15,7 @@ class ReservationsController < ApplicationController
     @flat = Flat.find(params[:flat_id])
     @reservation.start_date = @reservation.dates.split(' to ')[0]
     @reservation.end_date = @reservation.dates.split(' to ')[1]
+    @reservation.total_price = @flat.price * (@reservation.end_date - @reservation.start_date).to_i
     @reservation.flat = @flat
     @reservation.user = current_user
     if @reservation.save
