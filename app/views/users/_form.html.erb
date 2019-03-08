@@ -1,5 +1,5 @@
 <%= simple_form_for(@user)  do |f| %>
-  <%= f.input :profile_pic %>
+  <%= f.button :submit, 'Update Profile Picture', class: 'btn btn-secondary-teal'  %>
+  <%= f.input :profile_pic, label: false %>
   <%= f.input :profile_pic_cache, as: :hidden %>
-  <%= f.submit class: 'btn btn-primary-teal'  %>
 <% end %>

@@ -1,4 +1,4 @@
-<div class="date-form">
+<div class="date-form date">
   <%= simple_form_for [@flat, @reservation] do |f| %>
     <%= f.input :dates, as: :string, required: false, input_html: {class: "datepicker"} %>
     <%= f.submit class: 'btn-primary-teal'%>
