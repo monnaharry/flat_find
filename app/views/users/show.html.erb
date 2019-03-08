@@ -50,7 +50,7 @@
               <div class="flat-details">
                 <div class="flat-details-left">
                   <h4><%= res.flat.name %></h4>
-                  <p><%= flat.description %></p>
+                  <p><%= res.start_date.strftime("%b %d, %Y") %> - <%= res.end_date.strftime("%b %d, %Y") %></p>
                 </div>
                 <div class="flat-details-right">
                   <%= link_to res.status, edit_reservation_path(res), class: 'btn btn-yellow' %>
@@ -63,7 +63,7 @@
               <div class="flat-details">
                 <div class="flat-details-left">
                   <h4><%= res.flat.name %></h4>
-                  <p><%= flat.description %></p>
+                  <p> <%= res.start_date.strftime("%b %d, %Y") %> - <%= res.end_date.strftime("%b %d, %Y") %></p>
                 </div>
                 <div class="flat-details-right">
                   <%= link_to res.status, edit_reservation_path(res), class: 'btn btn-teal' %>
@@ -76,7 +76,7 @@
               <div class="flat-details">
                 <div class="flat-details-left">
                   <h4><%= res.flat.name %></h4>
-                  <p><%= flat.description %></p>
+                  <p><%= res.start_date.strftime("%b %d, %Y") %> - <%= res.end_date.strftime("%b %d, %Y") %></p>
                 </div>
                 <div class="flat-details-right">
                   <%= link_to 'Declined', edit_reservation_path(res), class: 'btn btn-red' %>
@@ -91,7 +91,7 @@
 
     <hr>
 
-    <h3>Trip Confirmations</h3>
+    <h3>Upcoming Reservations</h3>
 
     <div class="profile-user-flats-list">
       <% @user.flats.each do |flat| %>
@@ -100,12 +100,12 @@
 
             <div class="profile-list-item">
               <div class="flat-image">
-                <%= link_to  cl_image_tag(flat.images.first.url, width: 150, height: 115), flat_path(flat) %>
+                <%= link_to  cl_image_tag(res.user.profile_pic, width: 75, height: 75, class: "avatar"), flat_path(flat) %>
               </div>
               <div class="flat-details">
                 <div class="flat-details-left">
-                   <h4><%= res.flat.name %></h4>
-                  <p> You're trip has been confirmed for <%= res.start_date.strftime("%b %d, %Y") %> - <%= res.end_date.strftime("%b %d, %Y") %></p>
+                   <h4> <%= res.user.name.capitalize %> is arriving soon! </h4>
+                  <p> <%= res.flat.name %> - <%= res.start_date.strftime("%b %d, %Y") %> - <%= res.end_date.strftime("%b %d, %Y") %></p>
                 </div>
               </div>
             </div>
