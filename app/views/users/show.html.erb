@@ -15,22 +15,22 @@
     <h3>Your flats</h3>
 
     <div class="profile-user-flats-list">
-      <div class="profile-list-item">
         <% @user.flats.each do |flat| %>
+      <div class="profile-list-item">
         <div class="flat-image">
           <%= link_to  cl_image_tag(flat.images.first.url, width: 150, height: 115), flat_path(flat) %>
         </div>
         <div class="flat-details">
           <div class="flat-details-left">
             <h4><%= flat.name %></h4>
-            <p><%= flat.description %></p>
+            <p><%= flat.description.split[0...20].join(' ') %></p>
           </div>
           <div class="flat-details-right">
             <h5>€<%= flat.price %></h5>
           </div>
         </div>
-        <% end %>
       </div>
+      <% end %>
     </div>
 
     <hr>
@@ -128,9 +128,9 @@
           <%= cl_image_tag(Flat.find(res.flat_id).images.first.url, width: 150, height: 115)%>
         </div>
         <div class="flat-details">
-          <h4 id="requested-bookings-flat-name"><%= Flat.find(res.flat_id).name %></h4>
-          <p><%= res.status %></p>
-          <p><%= res.start_date.strftime("%b %d, %Y") %> - <%= res.end_date.strftime("%b %d, %Y") %></p>
+          <h4><%= Flat.find(res.flat_id).name %></h4>
+          <p style="margin-top: 10px;"><%= res.start_date.strftime("%b %d, %Y") %> - <%= res.end_date.strftime("%b %d, %Y") %></p>
+          <h5><%= res.status %></h5>
         </div>
       </div>
       <hr>
