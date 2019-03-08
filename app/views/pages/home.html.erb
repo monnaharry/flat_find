@@ -7,18 +7,12 @@
   <div class="container">
     <div class="card">
       <div class="row">
-        <h3>Where do you want to go?</h3>
+        <h3>Find your next adventure</h3>
       </div>
       <div class="search-bar">
         <div class="search-home">
-          <%=form_tag flats_path, method: :get do  %>
-            <%= text_field_tag :query,
-            params[:query],
-            class: "form-control form-home",
-            placeholder: "How about Bali?"%>
-            <%= link_to 'Go', flats_path, class: 'btn btn-primary-teal search-go' %>
+            <%= link_to 'Go', flats_path, class: 'btn btn-primary-teal  form-control form-homesearch-go' %>
           </div>
-        <% end %>
       </div>
     </div>
   </div>

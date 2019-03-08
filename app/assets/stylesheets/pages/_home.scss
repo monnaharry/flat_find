@@ -18,6 +18,9 @@
   justify-content: center;
 }
 
+.search-home a {
+  width: 100px;
+}
 .wrapper-home {
   display:flex;
   justify-content:center;
@@ -35,5 +38,6 @@
 .header {
   h1 {
     margin-bottom: -10px;
+    margin-left: 30px;
   }
 }
