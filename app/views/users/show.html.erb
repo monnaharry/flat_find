@@ -37,26 +37,51 @@
 
     <h3>Reservations to your flats</h3>
 
+    <!-- reservation status logic -->
+
     <div class="profile-user-flats-list">
       <div class="profile-list-item">
         <% @user.flats.each do |flat| %>
-        <% flat.reservations.each do |res| %>
-        <div class="flat-image">
-          <%= link_to  cl_image_tag(flat.images.first.url, width: 150, height: 115), flat_path(flat) %>
-        </div>
-        <div class="flat-details">
+          <% flat.reservations.each do |res| %>
           <% if res.status == "Pending" %>
+              <div class="flat-image">
+                <%= link_to  cl_image_tag(flat.images.first.url, width: 150, height: 115), flat_path(flat) %>
+              </div>
+              <div class="flat-details">
               <div class="flat-details-left">
                 <h4><%= res.flat.name %></h4>
                 <p><%= flat.description %></p>
               </div>
               <div class="flat-details-right">
-                <%= link_to res.status, edit_reservation_path(res), class: 'btn btn-secondary-teal' %>
+                <%= link_to res.status, edit_reservation_path(res), class: 'btn btn-yellow' %>
               </div>
-              <% end %>
-
+          <% elsif res.status == "Approved" %>
+              <div class="flat-image">
+                <%= link_to  cl_image_tag(flat.images.first.url, width: 150, height: 115), flat_path(flat) %>
+              </div>
+              <div class="flat-details">
+              <div class="flat-details-left">
+                <h4><%= res.flat.name %></h4>
+                <p><%= flat.description %></p>
+              </div>
+              <div class="flat-details-right">
+                <%= link_to res.status, edit_reservation_path(res), class: 'btn btn-teal' %>
+              </div>
+            <% else %>
+              <div class="flat-image">
+                <%= link_to  cl_image_tag(flat.images.first.url, width: 150, height: 115), flat_path(flat) %>
+              </div>
+              <div class="flat-details">
+              <div class="flat-details-left">
+                <h4><%= res.flat.name %></h4>
+                <p><%= flat.description %></p>
+              </div>
+              <div class="flat-details-right">
+                <%= link_to 'Declined', edit_reservation_path(res), class: 'btn btn-red' %>
+              </div>
           <% end %>
           <% end %>
+        <% end %>
         </div>
       </div>
     </div>

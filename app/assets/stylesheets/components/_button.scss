@@ -42,3 +42,39 @@ $dark-gray: #484848;
   color: white !important;
   max-width: 125px;
 }
+
+
+.btn-red {
+  border: 1px solid red;
+  color: red !important;
+  padding: 10px 15px;
+  border-radius: 6px;
+  width: 100px;
+  font-size: 15px;
+  min-width: 200px;
+  max-width: 500px;
+}
+
+
+.btn-yellow {
+  border: 1px solid #ffcc14;
+  color: #ffcc14 !important;
+  padding: 10px 15px;
+  border-radius: 6px;
+  width: 100px;
+  font-size: 15px;
+  min-width: 200px;
+  max-width: 500px;
+}
+
+
+.btn-teal {
+  border: 1px solid $teal;
+  color: $teal !important;
+  padding: 10px 15px;
+  border-radius: 6px;
+  width: 100px;
+  font-size: 15px;
+  min-width: 200px;
+  max-width: 500px;
+}
