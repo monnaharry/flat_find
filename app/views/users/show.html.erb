@@ -107,9 +107,6 @@
                    <h4><%= res.flat.name %></h4>
                   <p> You're trip has been confirmed for <%= res.start_date.strftime("%b %d, %Y") %> - <%= res.end_date.strftime("%b %d, %Y") %></p>
                 </div>
-                <div class="flat-details-right">
-                  <%= link_to 'Change Reservation', edit_reservation_path(res), class: 'btn btn-teal' %>
-                </div>
               </div>
             </div>
           <% end %>
@@ -126,13 +123,18 @@
 
     <div class="profile-user-flats-list">
       <% current_user.reservations.each do |res| %>
-        <div class="planned-trips">
-          <p><%= Flat.find(res.flat_id).name %></p>
-          <p>Status: <%= res.status %></p>
-          <p><%= res.start_date %> - <%= res.end_date %></p>
-          <% end %>
+      <div class="profile-list-item">
+        <div class="flat-image">
+          <%= cl_image_tag(Flat.find(res.flat_id).images.first.url, width: 150, height: 115)%>
         </div>
-
+        <div class="flat-details">
+          <h4 id="requested-bookings-flat-name"><%= Flat.find(res.flat_id).name %></h4>
+          <p><%= res.status %></p>
+          <p><%= res.start_date.strftime("%b %d, %Y") %> - <%= res.end_date.strftime("%b %d, %Y") %></p>
+        </div>
+      </div>
+      <hr>
+      <% end %>
     </div>
 
 

@@ -25,6 +25,7 @@
 .profile-list-item {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
   img {
     margin-right: 32px;
   }
@@ -58,3 +59,7 @@
 
 }
 
+
+#requested-bookings-flat-name {
+  margin-top: 0px;
+}
